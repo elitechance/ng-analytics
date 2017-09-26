@@ -1,0 +1,44 @@
+{
+  "name": "ng-analytics",
+  "version": "1.0.0",
+  "description": "Angular Analytics Abstraction",
+  "keywords": [
+    "google analytics"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf .tmp && rimraf dist",
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "./node_modules/uglify-js/bin/uglifyjs dist/bundles/ng.analytics.module.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng.analytics.module.umd.min.js",
+    "copy": "cpx './package-dist.json' dist && renamer --find 'package-dist.json' --replace 'package.json' ./dist/*",
+    "build": "npm run clean && npm run transpile && npm run package && npm run minify && npm run copy",
+    "link": "cd dist && npm link",
+    "unlink": "cd dist && npm unlink"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/elitechance/ng-analytics",
+  "bugs": {
+    "url": "https://github.com/elitechance/ng-analytics/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elitechance/ng-analytics.git"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^4.4.3",
+    "@angular/compiler-cli": "^4.4.3",
+    "cpx": "^1.5.0",
+    "renamer": "^0.6.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.41.6",
+    "typescript": "^2.5.2",
+    "uglify-js": "^2.8.29"
+  },
+  "dependencies": {
+    "@angular/common": "^4.4.3",
+    "@angular/core": "^4.4.3",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.7.8"
+  }
+}

@@ -1,0 +1,31 @@
+{
+	"name": "ng-analytics",
+	"version": "1.0.0",
+	"description": "Angular Analytics Abstraction",
+	"main": "bundles/ng.analytics.module.umd.min.js",
+	"module": "index.js",
+	"typings": "index.d.ts",
+	"keywords": [
+		"angular",
+		"google analytics"
+	],
+	"author": {
+		"name": "Ethan Dave Gomez",
+		"email": ""
+	},
+	"license": "MIT",
+    "homepage": "https://github.com/elitechance/ng-analytics",
+    "bugs": {
+      "url": "https://github.com/elitechance/ng-analytics/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/elitechance/ng-analytics.git"
+    },
+	"peerDependencies": {
+		"@angular/core": "^2.4.0 || ^4.4.0 || ^5.0.0",
+		"reflect-metadata": "^0.1.10",
+		"rxjs": "^5.4.1",
+		"zone.js": "^0.8.13"
+	}
+}
