@@ -1,6 +1,12 @@
 # Changelog
 
-1.0.0
+0.1.1
+
+* Fix readme
+
+0.1.0
 
 * Initial import
-* Supports google analytics and mixpanel
+* Supports google and mixpanel analytics
+* Support for ngTrack `directive` with [ngTriggerEvents] and [ngProperties] attributes
+* Support multiple events trigger in [ngTriggerEvents]

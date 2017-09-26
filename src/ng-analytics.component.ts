@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NgAnalyticsService } from './ng-analytics.service';
+import { NgAnalytics } from './ng-analytics.service';
 
 @Component({
 	selector: 'ng-analytics-component',
-	template: '{{greeting}}'
+	template: '<div>Greetings: {{greeting}}</div>'
 })
 export class NgAnalyticsComponent implements OnInit {
 
 	greeting: string;
 
-	constructor(private service: NgAnalyticsService) { }
+	constructor(private service: NgAnalytics ) { }
 
 	ngOnInit() {
-		this.greeting = this.service.sayHello();
+		this.greeting = "Hello";
 	}
 }

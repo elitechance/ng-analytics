@@ -1,19 +1,20 @@
+import { NgAnalyticsTrackDirective } from './ng-analytics-track.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NgAnalyticsService } from './ng-analytics.service';
+import { NgAnalytics } from './ng-analytics.service';
 import { NgAnalyticsComponent } from './ng-analytics.component';
 
 export function ngAnalyticsServiceFactory() {
-	return new NgAnalyticsService();
+	return new NgAnalytics();
 }
 
 @NgModule({
 	imports: [ CommonModule ],
 	providers: [
-		{ provide: NgAnalyticsService, useFactory: ngAnalyticsServiceFactory }
+		{ provide: NgAnalytics, useFactory: ngAnalyticsServiceFactory },
 	],
-	declarations: [ NgAnalyticsComponent ],
-	exports: [ NgAnalyticsComponent ]
+	declarations: [ NgAnalyticsComponent, NgAnalyticsTrackDirective ],
+	exports: [ NgAnalyticsComponent, NgAnalyticsTrackDirective ]
 })
 export class NgAnalyticsModule { }

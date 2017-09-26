@@ -1,13 +1,14 @@
 {
 	"name": "ng-analytics",
-	"version": "1.0.0",
+	"version": "0.1.1",
 	"description": "Angular Analytics Abstraction",
 	"main": "bundles/ng.analytics.module.umd.min.js",
 	"module": "index.js",
 	"typings": "index.d.ts",
 	"keywords": [
 		"angular",
-		"google analytics"
+		"google analytics",
+		"mixpanel"
 	],
 	"author": {
 		"name": "Ethan Dave Gomez",

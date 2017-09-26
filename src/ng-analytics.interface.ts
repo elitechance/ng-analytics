@@ -3,10 +3,10 @@ export interface HitInfo {
 }
 
 export interface EventHitInfo extends HitInfo {
-    category: string
-    action: string
-    label?: string
-    value?: number
+    eventCategory: string
+    eventAction: string
+    eventLabel?: string
+    eventValue?: number
 }
 
 export interface PageHitInfo extends HitInfo {
@@ -23,13 +23,10 @@ export interface SocialHitInfo extends HitInfo {
 
 export interface ScreenHitInfo extends HitInfo {
     screenName: string;
-}
-
-export interface ScreenFields extends HitInfo {
     appName: string;
-    appId?: string;
     appVersion?: string;
     appInstallerId?: string;
+    appId?: string;
 }
 
 export interface TimingHitInfo extends HitInfo {
@@ -45,11 +42,12 @@ export interface ExceptionHitInfo extends HitInfo {
 }
 
 export interface NgAnalyticsInterface {
+    track(value: string, info?: any, fields?: any): any;
     send(hitInfo: HitInfo, info?: any, fields?: any): any;
     event(eventInfo: EventHitInfo, fields?: any): any;
     page(pageInfo: PageHitInfo, fields?: any): void;
     social(socialInfo: SocialHitInfo, fields?: any): any;
-    screen(screenInfo: ScreenHitInfo, fields?: ScreenFields): any;
+    screen(screenInfo: ScreenHitInfo, fields?: any): any;
     timing(timingInfo: TimingHitInfo, fields?: any): any;
     exception(exceptionInfo: ExceptionHitInfo, fields?: any): any;
     set(name: any, value?: string): any;

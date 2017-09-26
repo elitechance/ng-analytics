@@ -4,7 +4,6 @@ import {
     EventHitInfo,
     PageHitInfo,
     SocialHitInfo,
-    ScreenFields,
     ScreenHitInfo,
     TimingHitInfo,
     ExceptionHitInfo
@@ -21,8 +20,17 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
             return false;
         }
     }
+    track(value: string, info?: any, fields?: any) {
+        if (!this.ready()) { return; }
+        if (fields) {
+            mixpanel.track(value, Object.assign(info, fields));
+        } else {
+            mixpanel.track(value, info);
+        }
+
+    }
     send(hitInfo: HitInfo, info?: any, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track(hitInfo.type, Object.assign(info, fields));
         }
@@ -31,7 +39,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     event(eventInfo: EventHitInfo, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('event', Object.assign(eventInfo, fields));
         } else {
@@ -39,7 +47,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     page(pageInfo: PageHitInfo, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('page', Object.assign(pageInfo, fields));
         } else {
@@ -47,15 +55,15 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     social(socialInfo: SocialHitInfo, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('social', Object.assign(socialInfo, fields));
         } else {
             mixpanel.track('social', socialInfo);
         }
     }
-    screen(screenInfo: ScreenHitInfo, fields?: ScreenFields) {
-        if(!this.ready()) { return; }
+    screen(screenInfo: ScreenHitInfo, fields?: any) {
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('screen', Object.assign(screenInfo, fields));
         } else {
@@ -63,7 +71,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     timing(timingInfo: TimingHitInfo, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('timing', Object.assign(timingInfo, fields));
         } else {
@@ -71,7 +79,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     exception(exceptionInfo: ExceptionHitInfo, fields?: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (fields) {
             mixpanel.track('exception', Object.assign(exceptionInfo, fields));
         } else {
@@ -79,7 +87,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     set(name: any, value?: string) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         if (name === 'identity') {
             mixpanel.identity(value);
         }
@@ -88,7 +96,7 @@ export class NgAnalyticsMixPanel implements NgAnalyticsInterface {
         }
     }
     createProfile(id: string, properties: any) {
-        if(!this.ready()) { return; }
+        if (!this.ready()) { return; }
         mixpanel.identify(id);
         mixpanel.people.set(properties);
     }
