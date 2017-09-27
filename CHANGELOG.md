@@ -1,5 +1,9 @@
 # Changelog
 
+0.2.0
+
+* Add debug feature, `NgAnalytics.debugEnable = false`
+
 0.1.2
 
 * Fix readme typo on ngaTriggerEvent

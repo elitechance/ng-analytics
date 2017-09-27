@@ -1,6 +1,6 @@
 {
 	"name": "ng-analytics",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "Angular Analytics Abstraction",
 	"main": "bundles/ng.analytics.module.umd.min.js",
 	"module": "index.js",
