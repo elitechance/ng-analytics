@@ -1,5 +1,9 @@
 # Changelog
 
+0.1.2
+
+* Fix readme typo on ngaTriggerEvent
+
 0.1.1
 
 * Fix readme

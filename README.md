@@ -56,7 +56,7 @@ this.ngAnalytics.support([...,new MyCustomAnalytics()]);
 #### In your HTML, catch click and mouseover events to send tracking properties
 ```html
 <button ngaTrack="event"
-        [ngaTriggerEvents]="['click', 'mouseover']"
+        [ngaTriggerEvent]="['click', 'mouseover']"
         [ngaProperties]="{eventCategory: 'button', eventAction: 'clicked or mouseover'}">
 </button>
 ```
